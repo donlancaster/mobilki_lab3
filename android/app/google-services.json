@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "740599047422",
+    "project_id": "rpo-lab3-eec19",
+    "storage_bucket": "rpo-lab3-eec19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740599047422:android:f68abd4bb1e7fc906a71af",
+        "android_client_info": {
+          "package_name": "com.example.lab3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740599047422-kjoqqcvit7pjaf2c6jt0upmitsv9osfa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUfm_7i2Q6FsHlu_tjG8V2CPWAxuwq6vc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740599047422-kjoqqcvit7pjaf2c6jt0upmitsv9osfa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
