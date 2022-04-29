@@ -31,7 +31,9 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   MainPage(
                     mood: controller.mood,
-                    setMood: (mood) => controller.mood = mood,
+                    setMood:
+
+                        (mood) => controller.mood = mood,
                   ),
                   ListeningPage(mood: controller.mood),
                   const ProfilePage(),

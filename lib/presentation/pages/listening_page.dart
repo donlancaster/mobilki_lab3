@@ -9,8 +9,12 @@ class ListeningPage extends StatelessWidget {
     Mood.calm: 'https://music.yandex.by/users/no-subject/playlists/1004',
     Mood.anxious: 'https://music.yandex.by/users/no-subject/playlists/1005',
     Mood.relax: 'https://music.yandex.by/users/no-subject/playlists/1006',
-    Mood.focus: 'https://music.yandex.by/users/no-subject/playlists/1007',
+    Mood.focus: 'https://facebook.com',
   };
+
+
+
+
 
   const ListeningPage({Key? key, required this.mood}) : super(key: key);
 
@@ -43,7 +47,8 @@ class ListeningPage extends StatelessWidget {
           if (mood != null) ...[
             Center(
               child: Text(
-                mood!.name,
+                _urls[mood!]!,
+                //mood!.name,
                 softWrap: true,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
@@ -55,7 +60,7 @@ class ListeningPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: _moodPlaylist(),
+              child: _moodPlaylist(_urls[mood]!),
             ),
           ],
         ],
@@ -63,16 +68,85 @@ class ListeningPage extends StatelessWidget {
     );
   }
 
-  Widget _moodPlaylist() {
+
+
+  // Widget _moodPlaylist(String url) {
+  //   return ClipRRect(
+  //     clipBehavior: Clip.hardEdge,
+  //     child: SizedBox(
+  //       height: 200,
+  //       child: WebView(
+  //         initialUrl:
+  //         url
+  //
+  //     ,
+  //       ),
+  //     ),
+  //     borderRadius: BorderRadius.circular(20),
+  //   );
+  // }
+
+  Widget _moodPlaylist(String url) {
     return ClipRRect(
       clipBehavior: Clip.hardEdge,
       child: SizedBox(
         height: 200,
         child: WebView(
-          initialUrl: _urls[mood!],
+          initialUrl: _urls[mood!]!,
+          onWebViewCreated: (WebViewController webViewController) {
+            webViewController.loadUrl(_urls[mood!]!);
+          },
         ),
       ),
       borderRadius: BorderRadius.circular(20),
     );
   }
+  // Widget _moodPlaylist() {
+  //   switch (mood!) {
+  //     case (Mood.calm):
+  //       return ClipRRect(
+  //         clipBehavior: Clip.hardEdge,
+  //         child: SizedBox(
+  //           height: 200,
+  //           child: WebView(
+  //             initialUrl: _urls[0],
+  //           ),
+  //         ),
+  //         borderRadius: BorderRadius.circular(20),
+  //       );
+  //     case (Mood.anxious):
+  //       return ClipRRect(
+  //         clipBehavior: Clip.hardEdge,
+  //         child: SizedBox(
+  //           height: 200,
+  //           child: WebView(
+  //             initialUrl: _urls[1],
+  //           ),
+  //         ),
+  //         borderRadius: BorderRadius.circular(20),
+  //       );
+  //     case (Mood.relax):
+  //       return ClipRRect(
+  //         clipBehavior: Clip.hardEdge,
+  //         child: SizedBox(
+  //           height: 200,
+  //           child: WebView(
+  //             initialUrl: _urls[2],
+  //           ),
+  //         ),
+  //         borderRadius: BorderRadius.circular(20),
+  //       );
+  //     default:
+  //       return ClipRRect(
+  //         clipBehavior: Clip.hardEdge,
+  //         child: SizedBox(
+  //           height: 200,
+  //           child: WebView(
+  //             initialUrl: _urls[3],
+  //           ),
+  //         ),
+  //         borderRadius: BorderRadius.circular(20),
+  //       );
+  //   }
+  // }
 }

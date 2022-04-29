@@ -234,7 +234,12 @@ class _Playlists extends StatelessWidget {
           if (hasBorder) {
             setMood(null);
           } else {
+            setMood(null);
+
+          //  Future.delayed().whenComplete(() => null);
             setMood(_moods[playlist]);
+
+       //     log(_moods[playlist])
           }
         },
         child: Column(

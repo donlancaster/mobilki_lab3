@@ -15,7 +15,9 @@ class HomeController {
 
   Mood? get mood => _mood.value;
 
-  set mood(Mood? value) => _mood.value = value;
+  set mood(Mood? value) =>
+      _mood.value = value;
+
 
   bool isCurrentTab(int index) => currentTab.value == index;
 
